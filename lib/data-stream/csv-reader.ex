@@ -6,7 +6,7 @@ defmodule DataStream.CSVReader do
     |> File.stream!()
     |> Stream.map(&String.trim/1)
     |> Stream.reject(&(&1 == ""))
-    |> Task.async_stream(&dispatch_poolboy/1, max_concurrency: 30, timeout: :infinity)
+    |> Task.async_stream(&dispatch_poolboy/1, timeout: :infinity)
     |> Stream.run()
   end
 

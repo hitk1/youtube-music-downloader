@@ -6,8 +6,8 @@ defmodule DataStream.Poolboy do
     [
       name: {:local, :worker},
       worker_module: DataStream.PoolboyWorker,
-      size: 10,
-      max_overflow: 50
+      size: 25,
+      max_overflow: 15
     ]
   end
 
